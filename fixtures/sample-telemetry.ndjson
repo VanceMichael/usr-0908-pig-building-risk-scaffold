@@ -1,0 +1,6 @@
+{"reading_id":"reading-a01-temp-001","sensor_id":"SNS-A01-TEMP","observed_at":"2026-09-08T08:01:00+08:00","metric":"temperature_c","value":26.4}
+{"reading_id":"reading-a01-hum-001","sensor_id":"SNS-A01-HUM","observed_at":"2026-09-08T08:04:00+08:00","metric":"humidity_pct","value":71.2}
+{"reading_id":"reading-a01-nh3-001","sensor_id":"SNS-A01-NH3","observed_at":"2026-09-08T08:08:00+08:00","metric":"ammonia_ppm","value":17.8}
+{"reading_id":"reading-a01-cough-001","sensor_id":"SNS-A01-COUGH","observed_at":"2026-09-08T08:11:00+08:00","metric":"coughs_per_min","value":9}
+{"reading_id":"reading-a02-temp-001","sensor_id":"SNS-A02-TEMP","observed_at":"2026-09-08T08:03:00+08:00","metric":"temperature_c","value":23.1}
+{"reading_id":"reading-a03-nh3-001","sensor_id":"SNS-A03-NH3","observed_at":"2026-09-08T08:13:00+08:00","metric":"ammonia_ppm","value":12.5}

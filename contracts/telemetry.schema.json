@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pig-building/telemetry.schema.json",
+  "title": "Pig-house telemetry record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["reading_id", "sensor_id", "observed_at", "metric", "value"],
+  "properties": {
+    "reading_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{7,63}$"
+    },
+    "sensor_id": {
+      "type": "string",
+      "pattern": "^SNS-[A-Z0-9-]{3,24}$"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "metric": {
+      "type": "string",
+      "enum": ["temperature_c", "humidity_pct", "ammonia_ppm", "coughs_per_min"]
+    },
+    "value": {
+      "type": "number"
+    }
+  }
+}

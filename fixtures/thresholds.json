@@ -1,0 +1,28 @@
+{
+  "threshold_version": "2026-09-08",
+  "window_minutes": 15,
+  "late_arrival_minutes": 10,
+  "alert_open_windows": 2,
+  "alert_recovery_windows": 3,
+  "risk_values": ["normal", "watch", "critical"],
+  "growth_stages": {
+    "nursery": {
+      "temperature_c": {"watch_below": 22, "watch_above": 29, "critical_below": 18, "critical_above": 33},
+      "humidity_pct": {"watch_above": 75, "critical_above": 88},
+      "ammonia_ppm": {"watch_above": 15, "critical_above": 25},
+      "coughs_per_min": {"watch_above": 8, "critical_above": 16}
+    },
+    "finisher": {
+      "temperature_c": {"watch_below": 16, "watch_above": 25, "critical_below": 12, "critical_above": 30},
+      "humidity_pct": {"watch_above": 78, "critical_above": 90},
+      "ammonia_ppm": {"watch_above": 18, "critical_above": 30},
+      "coughs_per_min": {"watch_above": 10, "critical_above": 20}
+    },
+    "gestation": {
+      "temperature_c": {"watch_below": 15, "watch_above": 24, "critical_below": 10, "critical_above": 29},
+      "humidity_pct": {"watch_above": 80, "critical_above": 92},
+      "ammonia_ppm": {"watch_above": 18, "critical_above": 30},
+      "coughs_per_min": {"watch_above": 9, "critical_above": 18}
+    }
+  }
+}
