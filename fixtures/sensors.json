@@ -1,0 +1,17 @@
+{
+  "registry_version": "2026-09-08",
+  "sensors": [
+    {"sensor_id": "SNS-A01-TEMP", "unit_id": "UNIT-A-01", "metric": "temperature_c", "min_value": -10, "max_value": 60},
+    {"sensor_id": "SNS-A01-HUM", "unit_id": "UNIT-A-01", "metric": "humidity_pct", "min_value": 0, "max_value": 100},
+    {"sensor_id": "SNS-A01-NH3", "unit_id": "UNIT-A-01", "metric": "ammonia_ppm", "min_value": 0, "max_value": 200},
+    {"sensor_id": "SNS-A01-COUGH", "unit_id": "UNIT-A-01", "metric": "coughs_per_min", "min_value": 0, "max_value": 300},
+    {"sensor_id": "SNS-A02-TEMP", "unit_id": "UNIT-A-02", "metric": "temperature_c", "min_value": -10, "max_value": 60},
+    {"sensor_id": "SNS-A02-HUM", "unit_id": "UNIT-A-02", "metric": "humidity_pct", "min_value": 0, "max_value": 100},
+    {"sensor_id": "SNS-A02-NH3", "unit_id": "UNIT-A-02", "metric": "ammonia_ppm", "min_value": 0, "max_value": 200},
+    {"sensor_id": "SNS-A02-COUGH", "unit_id": "UNIT-A-02", "metric": "coughs_per_min", "min_value": 0, "max_value": 300},
+    {"sensor_id": "SNS-A03-TEMP", "unit_id": "UNIT-A-03", "metric": "temperature_c", "min_value": -10, "max_value": 60},
+    {"sensor_id": "SNS-A03-HUM", "unit_id": "UNIT-A-03", "metric": "humidity_pct", "min_value": 0, "max_value": 100},
+    {"sensor_id": "SNS-A03-NH3", "unit_id": "UNIT-A-03", "metric": "ammonia_ppm", "min_value": 0, "max_value": 200},
+    {"sensor_id": "SNS-A03-COUGH", "unit_id": "UNIT-A-03", "metric": "coughs_per_min", "min_value": 0, "max_value": 300}
+  ]
+}

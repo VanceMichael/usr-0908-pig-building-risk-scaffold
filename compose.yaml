@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: pig_risk
+      POSTGRES_USER: pig_risk
+      POSTGRES_PASSWORD: scaffold-only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pig_risk -d pig_risk"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+    volumes:
+      - pig-risk-data:/var/lib/postgresql/data
+
+  scaffold:
+    build:
+      context: .
+      dockerfile: Dockerfile.scaffold
+    init: true
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pig-risk-data:

@@ -1,0 +1,36 @@
+{
+  "campus_id": "CAMPUS-ZZ-01",
+  "timezone": "Asia/Shanghai",
+  "buildings": [
+    {
+      "building_id": "BLDG-A",
+      "floors": [
+        {
+          "floor_id": "BLDG-A-F01",
+          "units": [
+            {
+              "unit_id": "UNIT-A-01",
+              "growth_stage": "nursery",
+              "pens": ["PEN-A-01-01", "PEN-A-01-02"]
+            },
+            {
+              "unit_id": "UNIT-A-02",
+              "growth_stage": "finisher",
+              "pens": ["PEN-A-02-01", "PEN-A-02-02"]
+            }
+          ]
+        },
+        {
+          "floor_id": "BLDG-A-F02",
+          "units": [
+            {
+              "unit_id": "UNIT-A-03",
+              "growth_stage": "gestation",
+              "pens": ["PEN-A-03-01"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
