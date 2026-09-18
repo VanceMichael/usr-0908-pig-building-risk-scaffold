@@ -13,6 +13,33 @@ services:
     volumes:
       - pig-risk-data:/var/lib/postgresql/data
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    environment:
+      PORT: "8080"
+      DATABASE_URL: postgres://pig_risk:scaffold-only@postgres:5432/pig_risk
+      FIXTURES_DIR: /app/fixtures
+      MIGRATIONS_DIR: /app/migrations
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:8080/healthz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+      interval: 3s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+
+  # Original repository-asset validator (unchanged starting material).
   scaffold:
     build:
       context: .
@@ -21,6 +48,23 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    profiles: ["scaffold"]
+
+  # One-shot end-to-end acceptance run.
+  #   docker compose --profile acceptance up --build --abort-on-container-exit --exit-code-from acceptance
+  acceptance:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    environment:
+      BASE_URL: http://app:8080
+      ACCEPTANCE_PHASE: all
+    command: ["node", "scripts/acceptance.mjs"]
+    depends_on:
+      app:
+        condition: service_healthy
+    profiles: ["acceptance"]
 
 volumes:
   pig-risk-data:
