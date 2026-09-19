@@ -1,0 +1,9 @@
+{"reading_id":"acc-a03-temp-ok1","sensor_id":"SNS-A03-TEMP","observed_at":"2026-09-09T11:05:00+08:00","metric":"temperature_c","value":22}
+{broken json on physical line two
+{"reading_id":"acc-a03-unk-snsr","sensor_id":"SNS-A99-TEMP","observed_at":"2026-09-09T11:06:00+08:00","metric":"temperature_c","value":22}
+{"reading_id":"acc-a03-metr-msmt","sensor_id":"SNS-A03-TEMP","observed_at":"2026-09-09T11:07:00+08:00","metric":"ammonia_ppm","value":22}
+{"reading_id":"acc-a03-time-bad","sensor_id":"SNS-A03-TEMP","observed_at":"2026-09-09 11:08","metric":"temperature_c","value":22}
+{"reading_id":"acc-a03-range-bad","sensor_id":"SNS-A03-TEMP","observed_at":"2026-09-09T11:09:00+08:00","metric":"temperature_c","value":500}
+{"reading_id":"acc-a03-extra-fld","sensor_id":"SNS-A03-TEMP","observed_at":"2026-09-09T11:10:00+08:00","metric":"temperature_c","value":22,"pen":"PEN-X"}
+{"reading_id":"acc-a03-temp-ok1","sensor_id":"SNS-A03-HUM","observed_at":"2026-09-09T11:11:00+08:00","metric":"humidity_pct","value":60}
+{"reading_id":"acc-a01-temp-n01","sensor_id":"SNS-A01-TEMP","observed_at":"2026-09-09T08:01:00+08:00","metric":"temperature_c","value":26.4}

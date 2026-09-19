@@ -13,14 +13,60 @@ services:
     volumes:
       - pig-risk-data:/var/lib/postgresql/data
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    environment:
+      PORT: "8080"
+      FIXTURES_DIR: /app/fixtures
+      DATABASE_URL: postgres://pig_risk:scaffold-only@postgres:5432/pig_risk
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:8080/health >/dev/null 2>&1 || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  # One-shot end-to-end acceptance: drives `app` over HTTP, then starts a fresh
+  # process against the same database to prove restart persistence. Enabled
+  # only via the `acceptance` profile (or scripts/acceptance.sh).
+  acceptance:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    profiles: ["acceptance"]
+    entrypoint: ["/bin/sh", "scripts/acceptance-container.sh"]
+    environment:
+      BASE_URL: http://app:8080
+      FIXTURES_DIR: /app/fixtures
+      DATABASE_URL: postgres://pig_risk:scaffold-only@postgres:5432/pig_risk
+    depends_on:
+      app:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  # Original asset validator: confirms the repository fixtures are internally
+  # consistent before/alongside the application. Kept under a profile so plain
+  # `docker compose up` does not start this one-shot container.
   scaffold:
     build:
       context: .
       dockerfile: Dockerfile.scaffold
     init: true
+    profiles: ["validate"]
     depends_on:
       postgres:
         condition: service_healthy
+    restart: "no"
 
 volumes:
   pig-risk-data:

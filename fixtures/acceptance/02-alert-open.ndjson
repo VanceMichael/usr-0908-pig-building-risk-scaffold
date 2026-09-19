@@ -1,0 +1,2 @@
+{"reading_id":"acc-a01-nh3-w1","sensor_id":"SNS-A01-NH3","observed_at":"2026-09-09T08:20:00+08:00","metric":"ammonia_ppm","value":20}
+{"reading_id":"acc-a01-nh3-w2","sensor_id":"SNS-A01-NH3","observed_at":"2026-09-09T08:35:00+08:00","metric":"ammonia_ppm","value":28}

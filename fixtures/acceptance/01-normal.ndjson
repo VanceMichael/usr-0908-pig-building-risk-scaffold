@@ -1,0 +1,4 @@
+{"reading_id":"acc-a01-temp-n01","sensor_id":"SNS-A01-TEMP","observed_at":"2026-09-09T08:01:00+08:00","metric":"temperature_c","value":26.4}
+{"reading_id":"acc-a01-hum-n01","sensor_id":"SNS-A01-HUM","observed_at":"2026-09-09T08:04:00+08:00","metric":"humidity_pct","value":71.2}
+{"reading_id":"acc-a01-nh3-n01","sensor_id":"SNS-A01-NH3","observed_at":"2026-09-09T08:08:00+08:00","metric":"ammonia_ppm","value":12.0}
+{"reading_id":"acc-a01-coug-n01","sensor_id":"SNS-A01-COUGH","observed_at":"2026-09-09T08:11:00+08:00","metric":"coughs_per_min","value":4}

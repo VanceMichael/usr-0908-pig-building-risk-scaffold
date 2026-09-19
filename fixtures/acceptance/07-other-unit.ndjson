@@ -1,0 +1,2 @@
+{"reading_id":"acc-a02-coug-c1","sensor_id":"SNS-A02-COUGH","observed_at":"2026-09-09T10:05:00+08:00","metric":"coughs_per_min","value":22}
+{"reading_id":"acc-a02-coug-c2","sensor_id":"SNS-A02-COUGH","observed_at":"2026-09-09T10:20:00+08:00","metric":"coughs_per_min","value":22}

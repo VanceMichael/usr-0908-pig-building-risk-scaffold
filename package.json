@@ -1,0 +1,25 @@
+{
+  "name": "pig-house-risk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-storey pig-house telemetry ingestion and risk service",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "pretest": "tsc -p tsconfig.json && tsc -p tsconfig.test.json",
+    "start": "node dist/server.js",
+    "test": "node --test \"dist-test/src/**/*.test.js\""
+  },
+  "dependencies": {
+    "pg": "^8.16.2"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.5.4"
+  }
+}
